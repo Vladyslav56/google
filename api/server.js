@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 app.use(express.static("public"))
 
-app.post("/search", async (req, res) => {
+app.post("api/search", async (req, res) => {
 	const { keyword } = req.body
 	if (!keyword) {
 		return res.status(400).json({ error: "Keyword is required" })
