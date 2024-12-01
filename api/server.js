@@ -39,6 +39,10 @@ app.post("api/search", async (req, res) => {
 	}
 })
 
+app.listen(3000, () => {
+	console.log("Server running on port 3000")
+})
+
 // module.exports = async (res, req) => {
 // 	if (req.method === "POST") {
 // 		const { keyword } = req.body
