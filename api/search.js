@@ -41,7 +41,7 @@ const cheerio = require("cheerio")
 
 module.exports = async (res, req) => {
 	if (req.method === "POST") {
-		const keyword = req.body
+		const { keyword } = req.body
 		if (!keyword) {
 			return res.status(400).json({ error: "Keyword is required" })
 		}

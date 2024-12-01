@@ -11,14 +11,11 @@ async function sendRequest(e) {
 	download.style.display = "none"
 
 	try {
-		const response = await fetch(
-			`api/search?keyword=${encodeURIComponent(keyword)}`,
-			{
-				method: "POST",
-				// headers: { "Content-Type": "application/json" },
-				// body: JSON.stringify({ keyword }),
-			}
-		)
+		const response = await fetch("api/search", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ keyword }),
+		})
 		if (response.ok) {
 			results = await response.json()
 			console.log(results)
